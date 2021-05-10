@@ -32,9 +32,17 @@ function increaseCookies(){
     }else if(currentTotal >= 30 && multiplierLevel === 1){
         canBuyUpgrade = true;
         console.log('can buy upgrade 2');
-    }else if(currentTotal >= 50 && multiplierLevel ===2){
+    }else if(currentTotal >= 50 && multiplierLevel === 2){
         canBuyUpgrade = true;
         console.log('can buy upgrade 3');
+    }
+    else if(currentTotal >= 100 && multiplierLevel === 3){
+        canBuyUpgrade = true;
+        console.log('can buy upgrade 4');
+    }
+    else if(currentTotal >= 150 && multiplierLevel === 4){
+        canBuyUpgrade = true;
+        console.log('can buy upgrade 5');
     }
     checkUpgradeAvailability();
 }
@@ -48,10 +56,3 @@ function checkUpgradeAvailability(){
         multiplyBtn.classList.add('multiply-btn-unavailable');
     }
 }
-
-
-
-
-
-
-
