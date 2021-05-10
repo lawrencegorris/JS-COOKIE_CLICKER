@@ -1,18 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 
 body {
   background-color: #E0DAC8;
+  font-family: 'Caveat', cursive;
 }
 
 #cookie-wrapper {
-  width: 100%;
   display: inline-block;
+  margin: 150px auto 30px auto;
+  width: 100%;
   text-align: center;
-  margin: 0 auto;
 }
 
 #cookie-btn {
@@ -20,5 +24,37 @@ body {
 }
 
 #current-cookies {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+#feedback-box {
+  font-size: 30px;
+}
+
+#power-ups {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
   text-align: center;
+  font-size: 30px;
+}
+
+#multiply-btn {
+  color: #f2f2f2;
+  width: 200px;
+  height: 50px;
+  border: none;
+}
+
+.multiply-btn-available {
+  background-color: #8C5423;
+}
+.multiply-btn-available:hover {
+  cursor: pointer}
+.multiply-btn-unavailable {
+  background-color: #503a26;
+}
+.multiply-btn-unavailable:hover {
+  cursor: default;
 }
