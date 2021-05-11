@@ -1,46 +1,37 @@
-let autoClick;
-let autoClickLevel = 0;
+// SETUP AUTO-CLICK UPGRADE
+setInterval(autoClickFunction, 1000);
+let autoClickCount = 0;
+let autoClickCost = 10;
+
 const autoClickBtn = document.querySelector('#auto-click-btn');
 autoClickBtn.addEventListener('click', buyAutoClick);
 
 function buyAutoClick(){
-    if(canBuyUpgrade === true && currentTotal >= 20){
-        autoClickLevel = 1;
-        canBuyUpgrade = false;
-        autoClick = setInterval(autoClickCount, 1000);
-        currentTotal -= 20;
-        console.log('bought first auto click');
-    }else if(canBuyUpgrade === true && currentTotal >= 50){
-        autoClickLevel = 2;
-        canBuyUpgrade = false;
-        autoClick = setInterval(autoClickCount, 1000);
-        currentTotal -= 50;
-        console.log('bought second auto click');
+    if(canBuyUpgrades === true){
+        currentTotal = currentTotal - autoClickCost;
+        updateGame();
+        autoClickCount++;
+        autoClickCost = autoClickCost * 2;
+        canBuyUpgrades = false;
     }
-    updates();
-    checkUpgradeAvailability();
+    checkAutoClick();
 }
 
-function autoClickCount(){
-    switch(autoClickLevel){
-        case 1:
-            currentTotal++;
-            break;
-        case 2:
-            currentTotal += 2;
-            break;
-        case 3:
-            currentTotal += 5;
-            break;
-        case 4:
-            currentTotal += 10;
-            break;
-        case 5:
-            currentTotal += 15;
-            break;
-    }
-    showAmount.innerHTML = currentTotal.toString();
-    updates();
+function autoClickFunction(){
+
+    currentTotal = currentTotal + autoClickCount;
+    updateGame();
 }
 
-console.log(currentTotal);
+function checkAutoClick(){
+    if(currentTotal >= autoClickCost){
+        canBuyUpgrades = true;
+        autoClickBtn.classList.remove('power-up-locked');
+        autoClickBtn.classList.add('power-up-unlocked');
+        autoClickBtn.innerHTML = "NEXT MULTIPLIER AVAILABLE <br> PAY " + autoClickCost + " COOKIES TO UNLOCK";
+    }else{
+        autoClickBtn.classList.remove('power-up-unlocked');
+        autoClickBtn.classList.add('power-up-locked');
+        autoClickBtn.innerHTML = "NEXT MULTIPLIER LOCKED, YOU NEED: <br>" + autoClickCost + " COOKIES";
+    }
+}

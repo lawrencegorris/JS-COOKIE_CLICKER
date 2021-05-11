@@ -28,6 +28,7 @@ function cookieClicked(){
 
 // RUN CHECKS FOR GAME
 function updateGame(){
+    checkAutoClick();
     checkMultiply();
     showAmount.innerHTML = currentTotal.toString();
 }
