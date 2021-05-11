@@ -31,4 +31,12 @@ function updateGame(){
     checkAutoClick();
     checkMultiply();
     showAmount.innerHTML = currentTotal.toString();
+    showCookiesUntilGoal();
 }
+
+// FEEDBACK
+const cookiesLeft = document.querySelector('#cookies-left');
+function showCookiesUntilGoal(){
+    cookiesLeft.innerHTML = (10000 - currentTotal) + ' COOKIES TO GO!';
+}
+

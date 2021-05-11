@@ -18,7 +18,6 @@ function buyAutoClick(){
 }
 
 function autoClickFunction(){
-
     currentTotal = currentTotal + autoClickCount;
     updateGame();
 }

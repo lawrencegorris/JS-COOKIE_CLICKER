@@ -72,12 +72,12 @@ h2{
   font-weight: 700;
 }
 
-#feedback-box {
+p {
   font-size: 30px;
 }
 
 #power-ups {
-  justify-content: space-around;
+  justify-content: space-evenly;
   display: flex;
   margin: 0 auto;
   width: 80%;
@@ -90,6 +90,7 @@ h2{
   width: 250px;
   height: 100px;
   border: none;
+  border-radius: 25px;
 }
 
 .power-up-locked{
