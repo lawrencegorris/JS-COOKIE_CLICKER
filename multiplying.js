@@ -1,69 +1,34 @@
-let multiplierLevel = 0;
+// SETUP MULTIPLY UPGRADES
+let multiplyCost = 5;
+
+let cookieMultiplier = 0;
+
+const multiplyBtn = document.querySelector('#multiply-btn');
 multiplyBtn.addEventListener('click', buyMultiply);
+
 function buyMultiply(){
-    if(canBuyUpgrade === true && multiplierLevel === 0){
-        canBuyUpgrade = false;
-        multiplyBtn.innerHTML = "NEXT UPGRADE LOCKED";
-        currentTotal -= 20;
-        multiplierLevel = 1
-        console.log('bought first upgrade');
-    }else if(canBuyUpgrade === true && multiplierLevel === 1){
-        canBuyUpgrade = false;
-        multiplyBtn.innerHTML = "NEXT UPGRADE LOCKED";
-        currentTotal -= 30;
-        multiplierLevel = 2;
-        console.log('bought second upgrade');
+    if(canBuyUpgrades === true){
+        console.log(multiplyCost);
+        currentTotal = currentTotal - multiplyCost;
+        updateGame();
+        cookieMultiplier++;
+        multiplyCost = multiplyCost * 2;
+        console.log(multiplyCost);
+        canBuyUpgrades = false;
     }
-    else if(canBuyUpgrade === true && multiplierLevel === 2){
-        canBuyUpgrade = false;
-        multiplyBtn.innerHTML = "NEXT UPGRADE LOCKED";
-        currentTotal -= 50;
-        multiplierLevel = 3;
-        console.log('bought third upgrade');
-    }
-    else if(canBuyUpgrade === true && multiplierLevel === 3){
-        canBuyUpgrade = false;
-        multiplyBtn.innerHTML = "NEXT UPGRADE LOCKED";
-        currentTotal -= 100;
-        multiplierLevel = 4;
-        console.log('bought fourth upgrade');
-    }
-    else if(canBuyUpgrade === true && multiplierLevel === 4){
-        canBuyUpgrade = false;
-        multiplyBtn.innerHTML = "NEXT UPGRADE LOCKED";
-        currentTotal -= 150;
-        multiplierLevel = 5;
-        console.log('bought fifth upgrade');
-    }
-    updates();
-    checkUpgradeAvailability();
+    checkMultiply();
 }
 
-function cookieUpgrades(){
-    switch (multiplierLevel){
-        case 0:
-            currentTotal++;
-            feedback.innerHTML = 'You don\'t get any extra cookies yet, start saving and buy an upgrade!';
-            break;
-        case 1:
-            currentTotal += 2;
-            feedback.innerHTML = 'You now get 2 cookies each click!';
-            break;
-        case 2:
-            currentTotal += 5;
-            feedback.innerHTML = 'You now get 5 cookies each click!';
-            break;
-        case 3:
-            currentTotal += 10;
-            feedback.innerHTML = 'You now get 10 cookies each click!';
-            break;
-        case 4:
-            currentTotal += 15;
-            feedback.innerHTML = 'You now get 15 cookies each click!';
-            break;
-        case 5:
-            currentTotal += 25;
-            feedback.innerHTML = 'You now get 25 cookies each click!';
-            break;
+function checkMultiply(){
+    if (currentTotal >= multiplyCost){
+        canBuyUpgrades = true;
+        multiplyBtn.classList.remove('power-up-locked');
+        multiplyBtn.classList.add('power-up-unlocked');
+        multiplyBtn.innerHTML = "NEXT MULTIPLIER AVAILABLE <br> PAY " + multiplyCost + " COOKIES TO UNLOCK";
+    }else{
+        multiplyBtn.classList.remove('power-up-unlocked');
+        multiplyBtn.classList.add('power-up-locked');
+        multiplyBtn.innerHTML = "NEXT MULTIPLIER LOCKED, YOU NEED: <br>" + multiplyCost + " COOKIES";
+
     }
 }
