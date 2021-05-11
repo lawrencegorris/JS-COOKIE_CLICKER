@@ -1,3 +1,14 @@
+// START GAME
+let introScreen = document.querySelector('#intro-screen');
+let gameScreen = document.querySelector('#game-screen');
+let startGameBtn = document.querySelector('#start-game-btn');
+startGameBtn.addEventListener('click', startGame);
+function  startGame(){
+    introScreen.classList.remove('show-screen');
+    introScreen.classList.add('hide-screen');
+    gameScreen.classList.remove('hide-screen');
+}
+
 // SETUP
 let currentTotal = 0;
 

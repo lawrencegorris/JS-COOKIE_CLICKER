@@ -11,24 +11,29 @@
 <body>
 
 <main>
-
-    <div id="intro-screen">
-
-    </div>
-
-    <div id="cookie-wrapper">
-        <p id="feedback-box">You haven't bought any upgrades yet.</p>
-        <img id="cookie-btn" src="assets/cookie.png" alt="an image of a smiling cookie">
-        <p id="current-cookies">0</p>
-    </div>
-    <section id="power-ups">
-        <div id="multiplier-one">
-            <button id="multiply-btn" class="multiply-btn-unavailable power-up power-up-locked">NEXT UPGRADE LOCKED</button>
-            <label id="multiply-label" for="multiply-btn"></label>
+    <section id="intro-screen" class="show-screen">
+        <h1>Welcome to Cookie Clicker</h1>
+        <h2>A game were you click a cookie, get cookies, buy upgrades and get more cookies</h2>
+        <div id="start-game-btn-wrapper">
+            <button id="start-game-btn">START THE GAME</button>
         </div>
-        <div id="auto-clicker">
-            <button id="auto-click-btn" class="auto-click-btn-unavailable power-up power-up-locked">NEXT AUTO-CLICK LOCKED</button>
-            <label id="auto-click-label" for="auto-click-btn"></label>
+    </section>
+
+    <section id="game-screen" class="hide-screen">
+        <div id="cookie-wrapper">
+            <p id="feedback-box">You haven't bought any upgrades yet.</p>
+            <img id="cookie-btn" src="assets/cookie.png" alt="an image of a smiling cookie">
+            <p id="current-cookies">0</p>
+        </div>
+        <div id="power-ups">
+            <div id="multiplier-one">
+                <button id="multiply-btn" class="multiply-btn-unavailable power-up power-up-locked">NEXT UPGRADE LOCKED</button>
+                <label id="multiply-label" for="multiply-btn"></label>
+            </div>
+            <div id="auto-clicker">
+                <button id="auto-click-btn" class="auto-click-btn-unavailable power-up power-up-locked">NEXT AUTO-CLICK LOCKED</button>
+                <label id="auto-click-label" for="auto-click-btn"></label>
+            </div>
         </div>
     </section>
 </main>
