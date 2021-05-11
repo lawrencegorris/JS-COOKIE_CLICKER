@@ -27,10 +27,10 @@ function checkAutoClick(){
         canBuyUpgrades = true;
         autoClickBtn.classList.remove('power-up-locked');
         autoClickBtn.classList.add('power-up-unlocked');
-        autoClickBtn.innerHTML = "NEXT MULTIPLIER AVAILABLE <br> PAY " + autoClickCost + " COOKIES TO UNLOCK";
+        autoClickBtn.innerHTML = "NEXT AUTO-CLICK AVAILABLE <br> PAY " + autoClickCost + " COOKIES TO UNLOCK";
     }else{
         autoClickBtn.classList.remove('power-up-unlocked');
         autoClickBtn.classList.add('power-up-locked');
-        autoClickBtn.innerHTML = "NEXT MULTIPLIER LOCKED, YOU NEED: <br>" + autoClickCost + " COOKIES";
+        autoClickBtn.innerHTML = "NEXT AUTO-CLICK LOCKED, YOU NEED: <br>" + autoClickCost + " COOKIES";
     }
 }
