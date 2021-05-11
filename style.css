@@ -33,28 +33,27 @@ body {
 }
 
 #power-ups {
-  display: block;
+  justify-content: space-around;
+  display: flex;
   margin: 0 auto;
   width: 80%;
   text-align: center;
   font-size: 30px;
 }
 
-#multiply-btn {
+.power-up{
   color: #f2f2f2;
-  width: 200px;
-  height: 50px;
+  width: 250px;
+  height: 100px;
   border: none;
 }
 
-.multiply-btn-available {
-  background-color: #8C5423;
-}
-.multiply-btn-available:hover {
-  cursor: pointer}
-.multiply-btn-unavailable {
+.power-up-locked{
   background-color: #503a26;
-}
-.multiply-btn-unavailable:hover {
   cursor: default;
+}
+
+.power-up-unlocked{
+  background-color: #8C5423;
+  cursor: pointer;
 }
