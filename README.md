@@ -1,4 +1,5 @@
 # COOKIE CLICKER GAME
+https://lawrencegorris.github.io/cookie-clicker/
 ## WORK IN PROGRESS
 Part of the JS-course from BeCode.
 ### FEATURES
