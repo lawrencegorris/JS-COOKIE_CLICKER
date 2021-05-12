@@ -11,7 +11,6 @@ function  startGame(){
 
 // SETUP
 let currentTotal = 0;
-let canBuyUpgrades = false;
 
 // DOM ELEMENTS
 //const feedback = document.querySelector('#feedback-box');

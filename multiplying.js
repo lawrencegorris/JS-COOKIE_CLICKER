@@ -1,4 +1,5 @@
 // SETUP MULTIPLY UPGRADES
+let canBuyMultiply = false;
 let multiplyCost = 5;
 let cookieMultiplier = 0;
 
@@ -6,19 +7,19 @@ const multiplyBtn = document.querySelector('#multiply-btn');
 multiplyBtn.addEventListener('click', buyMultiply);
 
 function buyMultiply(){
-    if(canBuyUpgrades === true){
+    if(canBuyMultiply === true){
         currentTotal = currentTotal - multiplyCost;
         updateGame();
         cookieMultiplier++;
         multiplyCost = multiplyCost * 2;
-        canBuyUpgrades = false;
+        canBuyMultiply = false;
     }
     checkMultiply();
 }
 
 function checkMultiply(){
     if (currentTotal >= multiplyCost){
-        canBuyUpgrades = true;
+        canBuyMultiply = true;
         multiplyBtn.classList.remove('power-up-locked');
         multiplyBtn.classList.add('power-up-unlocked');
         multiplyBtn.innerHTML = "NEXT MULTIPLIER AVAILABLE <br> PAY " + multiplyCost + " COOKIES TO UNLOCK";
